@@ -1,16 +1,9 @@
-import express, { json } from 'express';
+import express from 'express';
+import routes from './routes';
 
 const app = express();
 
 app.use(express.json());
-
-// GET: Buscar ou listar uma informação
-// POST: Criar alguma nova informação
-// PUT: Atualizar uma informação existente
-// DELETE: Deletar uma informação existente
-
-app.get('/', (request, response) => {
-  return response.json({ message: 'Hellow World'});
-});
+app.use(routes);
 
 app.listen(3333);
